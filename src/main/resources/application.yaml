@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://database-1.cbais8yksen2.eu-north-1.rds.amazonaws.com:5432/mydb
+    username: root
+    password: 13032001
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    function:
+      definition: findAll;findById;save
+      routing-expression: headers['spring_cloud_function_definition']

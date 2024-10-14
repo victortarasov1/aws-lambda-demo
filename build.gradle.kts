@@ -49,9 +49,8 @@ tasks.withType<Test> {
 val shadowTasks = tasks.withType<ShadowJar> {
     archiveClassifier = "aws"
     dependencies {
-        exclude(
-                dependency("org.springframework.cloud:spring-cloud-function-web:4.1.1")
-        )
+        exclude(dependency("org.springframework.cloud:spring-cloud-function-web:4.1.1"))
+        exclude(dependency("org.springframework.boot:spring-boot-starter-web"))
     }
     mergeServiceFiles()
     append("META-INF/spring.handlers")
